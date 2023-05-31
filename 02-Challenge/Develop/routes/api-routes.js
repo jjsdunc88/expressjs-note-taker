@@ -13,7 +13,7 @@ router.get('/notes', (req, res) => res.json(db));
 
 
 
-// router.post('/notes', (req, res) => res.json(db));
+
 
 
 router.post('/notes', (req, res) => {
@@ -52,6 +52,27 @@ router.post('/notes', (req, res) => {
     }
 }
 );
+
+
+router.delete('/notes/:id', (req, res) => {
+
+    const idToDelete = req.params.id;
+
+    db = db.filter((note) => note.id !== idToDelete);
+
+    const noteString = JSON.stringify(db);
+
+    fs.writeFile(`./db/db.json`, noteString, (err) => {
+        err
+            ? console.error(err)
+            : console.log(
+                `Note for ${newNote.title} has been written to JSON file`
+            )
+        res.send();
+    });
+
+});
+
 
 
 module.exports = router;
