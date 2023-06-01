@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
 });
 
 
-router.get('/notes', (req, res) => res.json(db));
+router.get('/notes', (req, res) => res.json(dbDelete));
 
 
 
