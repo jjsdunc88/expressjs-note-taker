@@ -3,6 +3,7 @@ const db = require('../db/db.json')
 const uuid = require("../helpers/uuid")
 const fs = require('fs')
 const path = require('path')
+let dbDelete = db;
 
 router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/notes.html"))
@@ -58,15 +59,15 @@ router.delete('/notes/:id', (req, res) => {
 
     const idToDelete = req.params.id;
 
-    db = db.filter((note) => note.id !== idToDelete);
+    dbDelete = dbDelete.filter((note) => note.id !== idToDelete);
 
-    const noteString = JSON.stringify(db);
+    const noteString = JSON.stringify(dbDelete);
 
     fs.writeFile(`./db/db.json`, noteString, (err) => {
         err
             ? console.error(err)
             : console.log(
-                `Note for ${newNote.title} has been written to JSON file`
+                // `Note for ${newNote.title} has been written to JSON file`
             )
         res.send();
     });
