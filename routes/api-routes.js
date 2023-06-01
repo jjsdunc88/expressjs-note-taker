@@ -61,7 +61,7 @@ router.delete('/notes/:id', (req, res) => {
 
     const noteString = JSON.stringify(dbDelete);
 
-    fs.writeFileSync(`./db/db.json`, noteString, (err) => {
+    fs.writeFile(`./db/db.json`, noteString, (err) => {
         err
             ? console.error(err)
             : console.log(
