@@ -15,8 +15,6 @@ router.get('/notes', (req, res) => res.json(db));
 
 
 
-
-
 router.post('/notes', (req, res) => {
 
     const { title, text } = req.body;
