@@ -3,14 +3,14 @@ const db = require('../db/db.json')
 const uuid = require("../helpers/uuid")
 const fs = require('fs')
 const path = require('path')
-let dbDelete = db;
+// let dbDelete = db;
 
 router.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/notes.html"))
 });
 
 
-router.get('/notes', (req, res) => res.json(dbDelete));
+router.get('/notes', (req, res) => res.json(db));
 
 
 
@@ -57,7 +57,7 @@ router.delete('/notes/:id', (req, res) => {
 
     const idToDelete = req.params.id;
 
-    dbDelete = dbDelete.filter((note) => note.id !== idToDelete);
+    const dbDelete = db.filter((note) => note.id !== idToDelete);
 
     const noteString = JSON.stringify(dbDelete);
 
