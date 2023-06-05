@@ -65,7 +65,7 @@ router.delete('/notes/:id', (req, res) => {
         err
             ? console.error(err)
             : console.log(
-                // `Note for ${newNote.title} has been written to JSON file`
+                
             )
         res.send();
     });
