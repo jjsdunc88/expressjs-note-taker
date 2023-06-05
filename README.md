@@ -32,7 +32,7 @@
 
   Click the "Get Started" button to access your personal note pad. Add a Note Title & Text and then click the save icon in the upper right corner to store your note. You can store multiple notes to the left hand column and click on any of them to read the Note Text.
 
-  [Click here for live website](https://note-expressjs-taker.herokuapp.com/notes)
+  [Click here for live website](https://note-expressjs-taker.herokuapp.com)
 
   ![Note Pad Display](./public/assets/app-screenshot.png)
 
@@ -51,7 +51,7 @@
   ## Credits
 
   Dane Shrewsbury
-  
+
   [Myro Lee](https://github.com/myrojoylee)
 
 
